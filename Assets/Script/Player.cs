@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] int playerSpeed;
-    [SerializeField] int jumpForce;
+    [SerializeField] float playerSpeed;
+    [SerializeField] float jumpForce;
 
     private Rigidbody rb;
     private float horizontal;
