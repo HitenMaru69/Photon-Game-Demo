@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,10 +11,11 @@ public class Player : MonoBehaviour
     private float vertical;
     private Vector3 movement;
     private bool isJump;
-
+    private PhotonView photonView;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        photonView = GetComponent<PhotonView>();
     }
 
     private void Update()
@@ -28,17 +30,32 @@ public class Player : MonoBehaviour
             isJump = true;
         }
 
+        if (photonView.IsMine)
+        {
+            if (transform.position.y <= -10f)
+            {
+                Destroy(photonView.gameObject);
+                GamePlayUI.instance.SetWinnLose(false, true);
+            }
+        }
+
+       
     }
 
     private void FixedUpdate()
     {
-        PlayerMoveMent();
-
-        if(isJump)
+        if(photonView.IsMine)
         {
-            PLayerJump();
-            isJump = false;
+            PlayerMoveMent();
+
+            if (isJump)
+            {
+                PLayerJump();
+                isJump = false;
+            }
         }
+
+
     }
 
     void PlayerMoveMent()

@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] GameObject target;
+    public GameObject target;
+
     [SerializeField] float speed;
     [SerializeField] Vector3 offSet;
     private void LateUpdate()
@@ -12,9 +13,13 @@ public class CameraFollow : MonoBehaviour
 
     void FollowPlayer()
     {
-        Vector3 smoothedPosition  = Vector3.Lerp(transform.position, target.transform.position + offSet, speed);
-     
-        transform.position = smoothedPosition;
+        if (target != null)
+        {
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, target.transform.position + offSet, speed);
+
+            transform.position = smoothedPosition;
+        }
+
 
     }
 }

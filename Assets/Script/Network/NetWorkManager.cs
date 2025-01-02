@@ -16,6 +16,7 @@ public class NetWorkManager : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        PhotonNetwork.Disconnect();
         PhotonNetwork.ConnectUsingSettings();
     }
 
@@ -48,9 +49,9 @@ public class NetWorkManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        // Add Logic after player join room 
-
+      
         Debug.Log("Player join room");
+        PhotonNetwork.LoadLevel("GamePlay");
         
     }
 }
