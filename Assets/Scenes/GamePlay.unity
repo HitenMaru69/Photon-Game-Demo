@@ -873,7 +873,7 @@ MonoBehaviour:
   spwanPosition: {fileID: 611446621}
   numberOfPlatformSpwan: 2
   platformLength: 10
-  view: {fileID: 0}
+  view: {fileID: 611446623}
 --- !u!114 &611446623
 MonoBehaviour:
   m_ObjectHideFlags: 0

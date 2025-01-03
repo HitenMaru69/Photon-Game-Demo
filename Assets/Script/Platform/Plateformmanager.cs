@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Plateformmanager : MonoBehaviourPun
 {
+    public static Plateformmanager Instance;
+
     [SerializeField] GameObject platformPrefeb;
     [SerializeField] GameObject winningPlatform;
     [SerializeField] Transform spwanPosition;
@@ -10,12 +12,18 @@ public class Plateformmanager : MonoBehaviourPun
     [SerializeField] int platformLength;
     [SerializeField] PhotonView view;
 
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         SpwanPlatforms();
     }
-    [PunRPC]
 
+   
     void SpwanPlatforms()
     {
         for (int i = 0; i < numberOfPlatformSpwan; i++)
@@ -37,4 +45,5 @@ public class Plateformmanager : MonoBehaviourPun
         PhotonNetwork.Instantiate(winningPlatform.name, spwanPosition.position, Quaternion.identity);
 
     }
+
 }

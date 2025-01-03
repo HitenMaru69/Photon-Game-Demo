@@ -43,6 +43,8 @@ MonoBehaviour:
   - DestroyPlateform1
   - DestroyPlatform2
   - SpwanPlatforms
+  - DestroyPlatform
+  - DestroyPlatForm1
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

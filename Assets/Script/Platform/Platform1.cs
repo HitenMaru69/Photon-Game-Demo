@@ -4,7 +4,7 @@ using UnityEngine;
 public class Platform1 : MonoBehaviourPun
 {
     [SerializeField] Platform platform;
-    [SerializeField]PhotonView view;
+    
 
     private void Start()
     {
@@ -18,30 +18,24 @@ public class Platform1 : MonoBehaviourPun
 
             if(platform.randomNumber == 0)
             {
-                view.RPC(nameof(DestroyPlateform1),RpcTarget.All);
+                PhotonView photonView = GetComponent<PhotonView>();
+             
+                
+                photonView.RPC(nameof(DestroyPlatForm1), RpcTarget.All);
+               
+                
             }
 
-            //PhotonView photonView = collision.gameObject.GetComponent<PhotonView>();
-
-            //if (platform.randomNumber == 0)
-            //{
-            //    if (!PhotonNetwork.IsMasterClient || !photonView.IsMine)
-            //    {
-            //        view.TransferOwnership(PhotonNetwork.LocalPlayer);
-                    
-            //    }
-            //    PhotonNetwork.Destroy(this.gameObject);
-
-            //}
+     
         }
 
     }
 
     [PunRPC]
-    void DestroyPlateform1()
+    void DestroyPlatForm1()
     {
-
-        Destroy(this.gameObject);
-
+        Destroy(gameObject);
     }
+
+  
 }

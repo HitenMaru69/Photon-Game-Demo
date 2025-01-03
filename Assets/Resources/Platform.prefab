@@ -231,7 +231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 4180655153125569955}
-  view: {fileID: 3032452114407640049}
 --- !u!114 &3032452114407640049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +412,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 4180655153125569955}
-  view: {fileID: 9045350474369861519}
 --- !u!114 &9045350474369861519
 MonoBehaviour:
   m_ObjectHideFlags: 0
