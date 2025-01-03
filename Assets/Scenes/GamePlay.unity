@@ -833,6 +833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 611446621}
   - component: {fileID: 611446622}
+  - component: {fileID: 611446623}
   m_Layer: 0
   m_Name: PlatformManager
   m_TagString: Untagged
@@ -864,7 +865,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 611446620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db72465ad0a13274fb45cecaa3dc9daf, type: 3}
+  m_Script: {fileID: 11500000, guid: 321eddbd01163624e954066af04239c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefeb: {fileID: 6470378570620742802, guid: b3f7247ba2f36fc4e90411bb96031449, type: 3}
@@ -872,6 +873,29 @@ MonoBehaviour:
   spwanPosition: {fileID: 611446621}
   numberOfPlatformSpwan: 2
   platformLength: 10
+  view: {fileID: 0}
+--- !u!114 &611446623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611446620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &693503477
 GameObject:
   m_ObjectHideFlags: 0

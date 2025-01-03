@@ -1,10 +1,10 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class Platform2 : MonoBehaviour
+public class Platform2 : MonoBehaviourPun
 {
     [SerializeField] Platform platform;
-    PhotonView view;
+    [SerializeField]PhotonView view;
 
     private void Start()
     {
@@ -15,21 +15,36 @@ public class Platform2 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PhotonView photonView = collision.gameObject.GetComponent<PhotonView>();
 
-            if (platform.randomNumber == 1)
+            if(platform.randomNumber == 1)
             {
-                if (!PhotonNetwork.IsMasterClient || !photonView.IsMine)
-                {
-                    view.TransferOwnership(PhotonNetwork.LocalPlayer);
-                }
-
-                PhotonNetwork.Destroy(this.gameObject);
-
-
-
+                view.RPC(nameof(DestroyPlatform2), RpcTarget.All);
             }
+
+            //PhotonView photonView = collision.gameObject.GetComponent<PhotonView>();
+
+            //if (platform.randomNumber == 1)
+            //{
+            //    if (!PhotonNetwork.IsMasterClient || !photonView.IsMine)
+            //    {
+            //        view.TransferOwnership(PhotonNetwork.LocalPlayer);
+            //    }
+
+            //    PhotonNetwork.Destroy(this.gameObject);
+
+
+
+            //}
         }
    
     }
+
+    [PunRPC]
+    void DestroyPlatform2()
+    {
+        Destroy(this.gameObject);
+    }
 }
+
+
+

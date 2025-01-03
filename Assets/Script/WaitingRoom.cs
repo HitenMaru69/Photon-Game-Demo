@@ -20,6 +20,7 @@ public class WaitingRoom : MonoBehaviour
         WaitingForOtherPlayer();
     }
 
+
     void SpwanPlayer()
     {
         Renderer renderer = spwanPosition.GetComponent<Renderer>();
@@ -49,6 +50,7 @@ public class WaitingRoom : MonoBehaviour
         else
         {
             waitingText.SetActive(true);
+            
         }
     }
 
